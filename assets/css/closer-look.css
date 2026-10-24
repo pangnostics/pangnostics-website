@@ -1,13 +1,55 @@
-/* Center the complete text/video group and retain full-screen sections. */
+/* v33: stack the heading above a larger, centered EV journey preview. */
 :is(#home,#ev-analysis) > .closer-look-section {
-  min-height: 100svh !important;
-  height: auto !important;
-  max-height: none !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding-block: clamp(32px, 6svh, 88px) !important;
+  min-height:100svh !important;
+  height:auto !important;
+  max-height:none !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:clamp(32px,6svh,64px) 24px !important;
 }
 :is(#home,#ev-analysis) > .closer-look-section > .wrap.feature {
-  margin: 0 auto !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) !important;
+  gap:clamp(24px,3.5svh,36px) !important;
+  width:100% !important;
+  max-width:960px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+}
+:is(#home,#ev-analysis) > .closer-look-section .feature-copy {
+  width:100%; min-width:0; text-align:center;
+  margin:0 !important; padding:0 !important;
+}
+:is(#home,#ev-analysis) > .closer-look-section .feature-copy .kicker {
+  margin:0 0 16px !important;
+}
+:is(#home,#ev-analysis) > .closer-look-section .feature-copy h2 {
+  max-width:26ch !important;
+  margin:0 auto !important;
+}
+:is(#home,#ev-analysis) > .closer-look-section .feature-media.closer-look-video {
+  width:100%; aspect-ratio:16 / 9;
+  margin:0 !important;
+}
+/* Match the translucent deconvolution control while preserving its hit target. */
+:is(#home,#ev-analysis) > .closer-look-section .closer-look-play {
+  left:50% !important; top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:88px !important; height:88px !important;
+  border:1px solid rgba(255,255,255,.78) !important;
+  background:rgba(15,39,68,.28) !important;
+  color:#fff !important;
+  box-shadow:0 3px 15px rgba(0,0,0,.14) !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.4);
+}
+:is(#home,#ev-analysis) > .closer-look-section .closer-look-play:hover,
+:is(#home,#ev-analysis) > .closer-look-section .closer-look-play:focus-visible {
+  background:rgba(15,39,68,.40) !important;
+}
+@media(max-width:767px) {
+  :is(#home,#ev-analysis) > .closer-look-section { padding-inline:20px !important; }
+  :is(#home,#ev-analysis) > .closer-look-section .closer-look-play {
+    width:64px !important; height:64px !important;
+  }
 }

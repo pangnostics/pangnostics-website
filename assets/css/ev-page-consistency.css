@@ -31,6 +31,8 @@
 
 /* Retain the central control while revealing the deconvolution diagram. */
 :is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"] .molecule-play-icon {
+  /* Center on the thumbnail; the inherited biomarker rule used 43%. */
+  top:50% !important;
   background: rgba(15,39,68,.28) !important;
   border: 1px solid rgba(255,255,255,.78) !important;
   color: #fff !important;
@@ -40,4 +42,10 @@
 :is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"]:hover .molecule-play-icon,
 :is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"]:focus-visible .molecule-play-icon {
   background: rgba(15,39,68,.40) !important;
+}
+/* Keep the diagram visible on phones; match the journey control's size. */
+@media(max-width:767px) {
+  :is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"] .molecule-play-icon {
+    width:64px; height:64px; font-size:26px;
+  }
 }

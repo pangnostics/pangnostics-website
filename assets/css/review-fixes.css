@@ -1,0 +1,45 @@
+/* v32: focused repairs from the desktop/mobile review. */
+.skip-link {
+  position:fixed; top:10px; left:16px; z-index:2147483200;
+  transform:translateY(calc(-100% - 20px));
+  opacity:0; pointer-events:none;
+  padding:12px 18px; border-radius:6px; background:#fff; color:#102b4d;
+  font:700 16px/1.4 Arial,Helvetica,sans-serif;
+}
+.skip-link:focus { transform:none; opacity:1; pointer-events:auto; outline:3px solid #2879ba; outline-offset:3px; }
+#main-content:focus { outline:none; }
+/* Semantic subheadings retain the original Company typography on phones. */
+#company .pang-company-section .pang-company-facts h2 {
+  font-size:17px !important; line-height:1.55 !important;
+}
+
+/* Explicit state lets Escape close the footer menu even while focus stays on its trigger. */
+.pang-footer-applications:not(.is-open) .pang-footer-app-popup { display:none; }
+.pang-footer-applications.is-open .pang-footer-app-popup { display:block; }
+
+/* Same action style, stronger contrast for its white text. */
+#home .pang-applications-showcase .pang-applications-learn { background:#246bb3; color:#fff; opacity:1; }
+#home .pang-applications-showcase a.pang-applications-learn:hover { background:#1b5795; }
+#home .pang-applications-showcase .pang-applications-coming:hover { background:#246bb3; }
+
+/* Native modal semantics isolate the background and preserve the existing card presentation. */
+dialog#ev-enlarge-backdrop {
+  width:100%; height:100dvh; max-width:none; max-height:none;
+  margin:0; border:0; color:#fff;
+}
+dialog#ev-enlarge-backdrop::backdrop { background:transparent; }
+body:has(dialog#ev-enlarge-backdrop[open]) { overflow:hidden; }
+
+/* More specific than the legacy phone reset; longer content may grow naturally. */
+#home > section.ev-deconvolution-section,
+#ev-analysis > section.ev-deconvolution-section { min-height:100svh !important; height:auto !important; max-height:none !important; }
+
+@media(max-width:767px) {
+  body:has(#ev-analysis.active) > header.top { height:64px !important; min-height:64px !important; }
+  body:has(#ev-analysis.active) > header.top .wrap.nav {
+    height:64px !important; min-height:64px !important; padding:8px 17px !important;
+  }
+  body:has(#ev-analysis.active) > header.top .brand { flex:0 1 200px !important; min-width:0 !important; }
+  body:has(#ev-analysis.active) > header.top .brand-logo { width:100% !important; max-width:190px !important; height:auto !important; }
+  body:has(#ev-analysis.active) > header.top #navlinks { top:64px !important; }
+}

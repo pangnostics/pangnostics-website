@@ -1,0 +1,18 @@
+/* Preserve MZ's full-screen section rule as the new figure is much wider. */
+:is(#home,#ev-analysis) > section.ev-concentration-section {
+  min-height: 100svh !important;
+  height: auto !important;
+  max-height: none !important;
+  display: flex !important;
+  align-items: center !important;
+}
+/* Give the complete two-panel PNG the available right-column width. */
+:is(#home,#ev-analysis) .ev-concentration-section .concentration-png-figure {
+  width: 100% !important;
+  max-width: 100% !important;
+  align-self: center !important;
+}
+/* Correct inherited dark-on-dark paragraph color; wording is unchanged. */
+:is(#home,#ev-analysis) .ev-concentration-section .concentration-copy > .molecule-explainer:not(.concentration-subheading) {
+  color: #d8e6f3 !important;
+}

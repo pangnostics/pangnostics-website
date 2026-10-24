@@ -1,0 +1,9 @@
+# Website repository only. Selected images and MP4 videos must be tracked.
+.DS_Store
+Thumbs.db
+Desktop.ini
+node_modules/
+.env
+.env.*
+*.log
+/.private/

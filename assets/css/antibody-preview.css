@@ -1,0 +1,20 @@
+/* Shared antibody thumbnail; the enlarged player remains unchanged. */
+:is(#home,#antibody-analysis) .antibody-qc-media > .antibody-preview {
+  display:block; padding:0; border:0; appearance:none;
+  color:#fff; font:inherit; text-align:inherit; line-height:0;
+}
+:is(#home,#antibody-analysis) .antibody-preview .antibody-center-play {
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  display:grid; place-items:center; width:clamp(44px,12%,76px); aspect-ratio:1;
+  border:1.5px solid currentColor; border-radius:50%;
+  background:transparent; opacity:.9; pointer-events:none;
+  transition:opacity .16s ease;
+}
+:is(#home,#antibody-analysis) .antibody-preview .antibody-center-play svg {
+  display:block; width:32%; height:32%; margin-left:5%; fill:currentColor;
+}
+:is(#home,#antibody-analysis) .antibody-preview:hover .antibody-center-play { opacity:1; }
+:is(#home,#antibody-analysis) .antibody-preview:focus-visible { outline:3px solid #1679bb; outline-offset:5px; }
+@media(prefers-reduced-motion:reduce) {
+  :is(#home,#antibody-analysis) .antibody-preview .antibody-center-play { transition:none; }
+}

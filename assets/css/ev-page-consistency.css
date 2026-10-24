@@ -1,0 +1,43 @@
+/* Bring the EV application's legacy overview layout into line with home. */
+#ev-analysis .antibody-video-overview { padding:55px 24px !important; }
+#ev-analysis .molecule-section .dfc-intro-kicker { line-height:1.4; }
+#ev-analysis > .closer-look-section .feature-copy .kicker { margin:1em 0 !important; }
+#ev-analysis > .closer-look-section .feature-copy h2 {
+  color:#13273b !important;
+  -webkit-text-fill-color:#13273b !important;
+}
+#ev-analysis .antibody-video-overview .ev-overview-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0,1.12fr) minmax(0,1fr) !important;
+  align-items: center !important;
+}
+#ev-analysis .antibody-video-overview .ev-overview-capabilities {order:0 !important; min-width:0 !important;}
+#ev-analysis .antibody-video-overview .ev-overview-media {order:1 !important; min-width:0 !important;}
+@media(max-width:850px) {
+  #ev-analysis .antibody-video-overview .ev-overview-layout {grid-template-columns:1fr !important;}
+}
+@media(max-width:760px) {
+  #ev-analysis .antibody-video-overview {padding:36px 20px 40px !important;}
+}
+
+/* Keep the biomarker section at least one screen tall on both pages. */
+:is(#home,#ev-analysis) .ev-deconvolution-section {
+  min-height:100svh !important;
+  height:auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* Retain the central control while revealing the deconvolution diagram. */
+:is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"] .molecule-play-icon {
+  background: rgba(15,39,68,.28) !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 15px rgba(0,0,0,.14) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+:is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"]:hover .molecule-play-icon,
+:is(#home,#ev-analysis) .ev-deconvolution-section [data-video="deconvolution"]:focus-visible .molecule-play-icon {
+  background: rgba(15,39,68,.40) !important;
+}

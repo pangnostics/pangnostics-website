@@ -1,0 +1,34 @@
+/* Requested homepage refinements; preserve artwork and enlarged playback. */
+#how-dfc-works .how-card > h3 { text-align:center; }
+#how-dfc-works [data-video="single-molecule-distribution"] .how-poster {
+  display:grid; place-items:center;
+}
+#how-dfc-works [data-video="single-molecule-distribution"] .how-poster img {
+  width:84%; height:84%;
+}
+
+/* MZ's selected rule: each section occupies at least a full screen.
+   Taller content can grow naturally; never crop the phone layout. */
+#home > #how-dfc-works {
+  min-height:100svh!important;
+  height:auto!important;
+  max-height:none!important;
+  display:flex!important;
+  align-items:center!important;
+}
+#home > section.paradigm-section.paradigm-lod-section {
+  min-height:100svh!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+#home > section.paradigm-section.paradigm-lod-section > .paradigm-inner {
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+}
+@media(max-width:760px) {
+  #how-dfc-works [data-video="single-molecule-distribution"] .how-poster img {
+    width:90%; height:90%;
+  }
+}

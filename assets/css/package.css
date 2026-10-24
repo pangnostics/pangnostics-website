@@ -1,0 +1,55 @@
+/* Small structural and accessibility repairs for the extracted static package. */
+.page { display:block; }
+.video-ready { cursor:pointer!important; pointer-events:auto!important; }
+.video-ready:focus-visible, a:focus-visible, button:focus-visible { outline:3px solid #3cc5eb; outline-offset:4px; }
+.video-modal-open { overflow:hidden; }
+.video-dialog { width:min(1120px,94vw); max-width:94vw; padding:0; border:1px solid #496078; border-radius:12px; background:#07172a; color:#fff; box-shadow:0 18px 70px #0008; overflow:auto; max-height:94dvh; }
+.video-dialog::backdrop { background:rgba(0,8,20,.88); }
+.video-dialog-bar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:10px 18px; }
+.video-dialog-title { font:600 15px/1.5 Arial,sans-serif; }
+.video-dialog-close { background:transparent; color:#fff; border:0; font-size:30px; width:44px; height:44px; }
+.video-dialog video { display:block; width:100%; max-height:78dvh; background:#000; }
+.video-error { margin:0; padding:15px 20px; color:#fff; }
+.pang-footer-applications.is-open .pang-footer-app-popup { display:block; }
+@media (min-width:768px) and (max-width:850px) {
+  .top #navlinks.open .dropdown { display:block!important; position:static!important; background:#fff; padding-left:16px; }
+  .top #navlinks.open a, .top #navlinks.open .dropbtn { color:#28445d!important; text-shadow:none!important; }
+  #applications-flyout { display:none!important; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto!important; }
+  .ev-stage { animation:none!important; transform:none!important; opacity:1!important; }
+}
+
+/* All four pages use a dark mobile header. */
+.top .menu { color:#fff!important; }
+
+/* Short standalone pages must not snap past their navigation header. */
+@media(max-width:767px) {
+ html:has(#company.active), html:has(#antibody-analysis.active) { scroll-snap-type:none!important; }
+}
+
+/* Override page-specific white desktop links inside the light tablet menu. */
+@media(min-width:768px) and (max-width:850px) {
+ body:has(.page.active) > header.top #navlinks.open > a,
+ body:has(.page.active) > header.top #navlinks.open .dropbtn { color:#28445d!important; text-shadow:none!important; }
+}
+
+/* Supplied music attribution accompanies the EV Journey player. */
+.video-credit { margin:0; padding:12px 18px; border-top:1px solid #496078; color:#d8e6ef; font:13px/1.5 Arial,sans-serif; }
+.video-credit a { color:#8cddf3; text-decoration:underline; text-underline-offset:2px; }
+.video-credit-changes { display:block; margin-top:4px; }
+.video-dialog:has(.video-credit:not([hidden])) video { max-height:66dvh; }
+
+/* v31: keep music attribution available without an always-open block. */
+.video-dialog-bar { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:8px 16px; }
+.video-dialog-close { grid-column:3; grid-row:1; cursor:pointer; }
+.video-credit-toggle { grid-column:2; grid-row:1; border:0; background:transparent; color:#a9c9dc; padding:8px 2px; font:13px/1.4 Arial,sans-serif; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+.video-credit-toggle:hover { color:#fff; }
+.video-credit-toggle:focus-visible, .video-dialog-close:focus-visible { outline:2px solid #8cddf3; outline-offset:3px; border-radius:3px; }
+.video-dialog [hidden] { display:none!important; }
+@media(max-width:520px) {
+  .video-dialog-bar { padding:10px 12px; grid-template-columns:minmax(0,1fr) 44px; column-gap:10px; row-gap:0; }
+  .video-dialog-close { grid-column:2; align-self:start; }
+  .video-credit-toggle { grid-column:1; grid-row:2; justify-self:start; }
+}

@@ -1,0 +1,13 @@
+/* Center the complete text/video group and retain full-screen sections. */
+:is(#home,#ev-analysis) > .closer-look-section {
+  min-height: 100svh !important;
+  height: auto !important;
+  max-height: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-block: clamp(32px, 6svh, 88px) !important;
+}
+:is(#home,#ev-analysis) > .closer-look-section > .wrap.feature {
+  margin: 0 auto !important;
+}

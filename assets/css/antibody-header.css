@@ -1,0 +1,57 @@
+/* Match the Company header's full-width layout on the antibody page. */
+body:has(#antibody-analysis.active) > header.top {
+  position:relative !important;
+  inset:auto !important;
+  height:86px !important;
+  min-height:86px !important;
+  background:#030914 !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  z-index:110 !important;
+}
+body:has(#antibody-analysis.active) > header.top .wrap.nav {
+  height:86px !important;
+  min-height:86px !important;
+  width:100% !important;
+  max-width:none !important;
+  padding:0 clamp(24px,3.8vw,70px) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+}
+body:has(#antibody-analysis.active) > header.top .brand {flex:0 0 auto !important;min-width:0 !important;}
+body:has(#antibody-analysis.active) > header.top .brand-logo {
+  width:clamp(210px,18.5vw,300px) !important;
+  max-width:42vw !important;
+  height:auto !important;
+}
+body:has(#antibody-analysis.active) > header.top .navlinks {gap:clamp(16px,2.2vw,35px) !important;}
+body:has(#antibody-analysis.active) > header.top .navlinks>a,
+body:has(#antibody-analysis.active) > header.top .dropbtn {
+  color:#fff !important;
+  text-transform:uppercase !important;
+  letter-spacing:.055em !important;
+  font-size:14px !important;
+  font-weight:750 !important;
+  text-shadow:0 1px 6px #0008 !important;
+}
+body:has(#antibody-analysis.active) > header.top .navlinks>a:hover,
+body:has(#antibody-analysis.active) > header.top .dropbtn:hover {color:#a6d8ed !important;}
+@media(min-width:768px) and (max-width:850px) {
+  body:has(#antibody-analysis.active) > header.top #navlinks.open > a,
+  body:has(#antibody-analysis.active) > header.top #navlinks.open .dropbtn {
+    color:#28445d !important;
+    text-shadow:none !important;
+  }
+}
+@media(max-width:767px) {
+  body:has(#antibody-analysis.active) > header.top {height:64px !important;min-height:64px !important;}
+  body:has(#antibody-analysis.active) > header.top .wrap.nav {
+    height:64px !important;min-height:64px !important;padding:8px 17px !important;
+  }
+  body:has(#antibody-analysis.active) > header.top .brand {flex:0 1 200px !important;}
+  body:has(#antibody-analysis.active) > header.top .brand-logo {width:100% !important;max-width:190px !important;}
+  body:has(#antibody-analysis.active) > header.top #menu {color:#fff !important;}
+  body:has(#antibody-analysis.active) > header.top #navlinks {top:64px !important;}
+}

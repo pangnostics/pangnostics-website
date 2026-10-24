@@ -1,0 +1,118 @@
+/* Homepage phenotyping figure and its local, accessible image viewer. */
+:is(#home,#ev-analysis) .ev-heatmap-figure {
+  display: grid;
+  place-items: center;
+  padding: 42px 14px 14px;
+  box-sizing: border-box;
+}
+:is(#home,#ev-analysis) .ev-heatmap-figure > img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0;
+  object-fit: contain !important;
+}
+:is(#home,#ev-analysis) .ev-heatmap-enlarge {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #bed1e1;
+  border-radius: 50%;
+  background: #f5f9fcd9;
+  color: #245880;
+  cursor: zoom-in;
+}
+.ev-heatmap-enlarge svg, .heatmap-dialog button svg {width: 20px; height: 20px; display: block;}
+:is(#home,#ev-analysis) .ev-heatmap-enlarge:hover {background: #e6f2fb; border-color: #6995b8;}
+:is(#home,#ev-analysis) .ev-heatmap-enlarge:focus-visible, .heatmap-dialog button:focus-visible,
+.heatmap-dialog-viewport:focus-visible {outline: 3px solid #3986ce; outline-offset: 3px;}
+
+/* Preserve the central play affordance while exposing more of the movie poster. */
+:is(#home,#ev-analysis) :is(#ev-video4-card,#ev-copy-ev-video4-card) .molecule-play-icon {
+  background: rgba(255,255,255,.28);
+  border: 1px solid rgba(255,255,255,.76);
+  color: rgba(255,255,255,.94);
+  box-shadow: 0 3px 15px rgba(0,0,0,.15);
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+:is(#home,#ev-analysis) :is(#ev-video4-card,#ev-copy-ev-video4-card) .molecule-video-trigger:hover .molecule-play-icon,
+:is(#home,#ev-analysis) :is(#ev-video4-card,#ev-copy-ev-video4-card) .molecule-video-trigger:focus-visible .molecule-play-icon {
+  background: rgba(255,255,255,.40);
+}
+
+html.heatmap-modal-open, body.heatmap-modal-open {overflow: hidden !important;}
+.heatmap-dialog {
+  --heatmap-fit-width: min(1368px, calc(96vw - 34px), calc((94vh - 88px) * 1.4770186335));
+  width: calc(var(--heatmap-fit-width) + 34px);
+  box-sizing: border-box;
+  max-width: 96vw;
+  max-height: 94vh;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #d6e1eb;
+  border-radius: 14px;
+  background: #fff;
+  color: #142e4d;
+  box-shadow: 0 20px 80px #00132666;
+  overflow: hidden;
+}
+.heatmap-dialog::backdrop {background: rgba(6,20,38,.72);}
+.heatmap-dialog-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 6px 10px 6px 18px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e9eff5;
+  background: #f7fafc;
+}
+.heatmap-dialog-title {font-size: 16px; font-weight: 650; margin: 0;}
+.heatmap-dialog-tools {display: flex; gap: 4px; flex: none;}
+.heatmap-dialog button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border: 0;
+  border-radius: 50%;
+  color: #245880;
+  background: transparent;
+  cursor: pointer;
+}
+.heatmap-dialog button:hover {background: #e5eff7;}
+.heatmap-dialog-viewport {
+  height: calc(var(--heatmap-fit-width) / 1.4770186335 + 28px);
+  padding: 12px 16px 16px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+}
+.heatmap-dialog-image {
+  display: block;
+  width: var(--heatmap-fit-width);
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+.heatmap-dialog.is-zoomed .heatmap-dialog-image {width: calc(var(--heatmap-fit-width) * 2);}
+.heatmap-dialog.is-zoomed .heatmap-zoom-plus {display: none;}
+@supports (height: 100dvh) {
+  .heatmap-dialog {
+    --heatmap-fit-width: min(1368px, calc(96vw - 34px), calc((94dvh - 88px) * 1.4770186335));
+    max-height: 94dvh;
+  }
+}
+@media(max-width: 780px) {
+  :is(#home,#ev-analysis) .ev-heatmap-figure {aspect-ratio: auto; padding: 48px 12px 14px;}
+  :is(#home,#ev-analysis) .ev-heatmap-figure > img {height: auto !important;}
+  :is(#home,#ev-analysis) .ev-heatmap-enlarge {width: 40px; height: 40px;}
+  .heatmap-dialog-title {font-size: 14px;}
+  .heatmap-dialog-bar {gap: 4px; padding-left: 12px;}
+}

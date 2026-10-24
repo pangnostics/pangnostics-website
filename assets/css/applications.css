@@ -1,0 +1,67 @@
+/* Keep the current full-screen section; align actions within each card row. */
+#home .pang-applications-showcase .pang-applications-grid {
+  align-items:stretch!important;
+}
+#home .pang-applications-showcase .pang-applications-card {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+}
+#home .pang-applications-showcase .pang-applications-image {
+  flex:0 0 auto;
+}
+#home .pang-applications-showcase .pang-applications-card > p {
+  flex:1 0 auto;
+}
+#home .pang-applications-showcase .pang-applications-learn {
+  align-self:center;
+  flex:0 0 auto;
+}
+#home .pang-applications-showcase .pang-applications-coming,
+#home .pang-applications-showcase .pang-applications-coming:hover {
+  background:#3986d4;
+  opacity:1;
+  cursor:default;
+}
+/* Selected v5 artwork: preserve its complete 447:377 composition. */
+#home > .pang-applications-showcase {
+  height:auto!important;
+  min-height:100svh!important;
+  max-height:none!important;
+  overflow:visible!important;
+  padding-inline:clamp(24px,3vw,58px)!important;
+}
+#home .pang-applications-showcase .pang-applications-image {
+  width:100%;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:447/377!important;
+  border:0!important;
+  box-shadow:none!important;
+  background:#061832;
+}
+#home .pang-applications-showcase .pang-applications-image img {
+  width:100%;
+  height:100%;
+  object-fit:contain!important;
+  transform:none!important;
+  border:0;
+  box-shadow:none;
+  filter:none;
+}
+@media(max-width:520px) {
+  #home .pang-applications-showcase .pang-applications-grid {
+    grid-template-columns:1fr!important;
+    width:100%;
+    max-width:447px!important;
+    margin-inline:auto!important;
+  }
+}
+
+/* v29: match the image backgrounds while preserving every selected artwork pixel. */
+#home > .pang-applications-showcase {
+  background:#00235a!important;
+}
+#home .pang-applications-showcase .pang-applications-image {
+  background:transparent;
+}

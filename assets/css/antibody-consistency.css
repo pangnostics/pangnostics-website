@@ -1,0 +1,21 @@
+/* Match the homepage's full-screen antibody composition. */
+#antibody-analysis > .antibody-qc-section {
+  min-height:100svh !important;
+  height:auto !important;
+  padding:clamp(38px,6vh,75px) clamp(25px,5vw,85px) !important;
+}
+#antibody-analysis > .antibody-qc-section > .antibody-qc-inner {
+  transform:none !important;
+}
+#antibody-analysis .antibody-qc-kicker {
+  color:#3278bc !important;
+  line-height:1.4 !important;
+  margin:0 0 18px !important;
+}
+#antibody-analysis .antibody-qc-section .antibody-qc-media .ev-overview-video-heading {
+  font:800 clamp(23px,2.15vw,36px)/1.2 Arial,Helvetica,sans-serif !important;
+}
+@media(max-width:767px) {
+  #antibody-analysis > .antibody-qc-section { padding:36px 25px 40px !important; }
+  #antibody-analysis .antibody-qc-section .antibody-qc-grid { gap:32px !important; }
+}

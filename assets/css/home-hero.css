@@ -1,0 +1,72 @@
+/* Live homepage hero. Separate class avoids the old screenshot/masking cascade. */
+#home > .home-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100svh !important;
+  min-height: 580px !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 120px 32px 86px !important;
+  overflow: hidden;
+  color: #fff;
+  background: #030713 !important;
+}
+#home .home-hero-poster,
+#home .home-hero-video,
+#home .home-hero-shade {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#home .home-hero-poster,
+#home .home-hero-video { object-fit: cover; object-position: center; }
+#home .home-hero-poster { z-index: -3; }
+#home .home-hero-video { z-index: -2; opacity: 0; }
+#home .home-hero-video.is-ready { opacity: 1; }
+#home .home-hero-shade {
+  z-index: -1;
+  background: linear-gradient(180deg,rgba(0,3,12,.34),rgba(0,3,12,.12) 35%,rgba(0,3,12,.24));
+}
+#home .home-hero-copy { position:relative; width:100%; max-width:1480px; text-align:center; }
+#home .home-hero-copy h1 {
+  max-width: 100%;
+  margin: 0;
+  color: #fff;
+  font: 800 clamp(36px,5.7vw,82px)/1.12 Arial,Helvetica,sans-serif;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0,0,0,.25);
+}
+#home .home-hero-subtitle {
+  max-width: 1180px;
+  margin: clamp(20px,2.3vw,30px) auto 0;
+  color: #fff;
+  font: 400 clamp(20px,2.65vw,38px)/1.32 Arial,Helvetica,sans-serif;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+#home .home-hero-tagline {
+  margin: clamp(20px,2.2vw,28px) auto 0;
+  color: #fff;
+  font: italic 400 clamp(17px,1.8vw,24px)/1.4 Arial,Helvetica,sans-serif;
+  text-wrap: balance;
+}
+@media(max-width:767px) {
+  #home > .home-hero {
+    height:100svh !important;
+    min-height:460px !important;
+    padding:100px 24px 86px !important;
+  }
+  #home .home-hero-copy h1 { font-size:clamp(34px,8.4vw,56px); line-height:1.13; }
+  #home .home-hero-subtitle { font-size:clamp(20px,4.7vw,28px); line-height:1.4; margin-top:24px; }
+  #home .home-hero-tagline { font-size:clamp(17px,4vw,21px); margin-top:22px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #home .home-hero-video { transition:none; }
+}

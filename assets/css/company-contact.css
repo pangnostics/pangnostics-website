@@ -1,0 +1,35 @@
+/* Contact action below the Company copy, within the existing white panel. */
+#company .company-partner-action {
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:center;
+}
+#company .company-partner-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:52px;
+  padding:12px 24px;
+  border:1px solid #2561d8;
+  border-radius:999px;
+  background:#2561d8;
+  color:#fff;
+  font:700 17px/1.4 Arial,Helvetica,sans-serif;
+  text-decoration:none;
+}
+#company .company-partner-link svg {
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex:none;
+}
+#company .company-partner-link:hover { background:#194fb9; border-color:#194fb9; }
+#company .company-partner-link:focus-visible { outline:3px solid #163c73; outline-offset:4px; }
+@media(max-width:767px) {
+  #company .company-partner-action { margin-top:14px; }
+}
